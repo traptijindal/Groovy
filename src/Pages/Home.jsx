@@ -7,6 +7,9 @@ const Home = () => {
   return (
     <div>
       <Sidebar />
+      <div className="main-content">
+        <Overview/>
+      </div>
    </div>
   )
 }
