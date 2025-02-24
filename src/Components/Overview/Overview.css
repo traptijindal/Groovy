@@ -1,12 +1,12 @@
-.main-overview{
-  display: flex;
-  color: white;
+/* .left{
+    color: white;
 }
 .top{
-    width: 650px;
+    width: 90%;
     background: #131617;
-    padding:10px 30px 10px 30px;
+    padding:10px 20px 10px 20px;
     border-radius: 10px;
+    
 }
 .top .heading{
   display: flex;
@@ -14,7 +14,9 @@
 }
 .top .artists{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 .artists .card{
     display: flex;
@@ -37,59 +39,267 @@
 }
 .below{
     display: flex;
-     margin: 30px;
-    width: 650px;
+    flex-direction: column;
+    margin-top: 20px;
+    width: 95%;
+    align-items: center;
+    border-radius: 10px;
+    padding:10px 20px 10px 20px;
+    background:#131617;
     
 }
-.below .left{
-    width: 320px;
-    margin-right: 30px;
-    border-radius: 10px;
-   background:#131617;
-   padding:10px 20px 10px 20px;
-
-}
-.below .left .heading{
+.below .heading{
     display: flex;
     justify-content: space-between;
 }
-.below .left .genre {
+.below.charts{
+    gap: 10px;
+}
+.below .charts .chart{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.below .charts .chart img{
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+}
+
+.below .charts .chart .title{
     display: flex;
+    font-size: 15px;
+    gap: 30px;
+    align-items: center;
+    color: white;
+}
+.heading .see{
+    color:#505152;
+    cursor: pointer;
+    transition:color 0.2s ease-in-out white;
+  
+}
+.heading .see:hover{
+    color: rgb(228, 221, 221);
+}
+
+@media (max-width:1280px){
+    .below .left{
+        width: 40%;
+    }
+
+    .below .right{
+        width: 60%;
+    }
+}
+@media(max-width:1030px){
+    .top .artists{
+        gap: 30px;
+    }
+    .below .left .genre .card{
+        height: 70px;
+        width: 60px;
+    }
+    .below .left .genre .card p{
+        text-wrap: wrap;
+    }
+}
+@media (max-width:700px){
+    .top .artists{
+        gap: 10px;
+    }
+    .below{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+    .below .left {
+        width: 95%;
+       
+    }
+    .below .right{
+        width: 95%;
+    }
+}
+@media (max-width:490px){
+    .top{
+        width: 85%;
+    }
+   .top .artists{
+    justify-content: space-between;
+   }
+   .artists .card .title{
+    font-size: 12px;
+   }
+   
+   .below {
+    width: 100%;
+   }
+   .below .charts .chart img{
+        width: 30px;
+        height: 30px;
+        border-radius: 2px;
+   }
+   .below  .chart p{
+    font-size: 12px;
+   }
+   
+} */
+
+.left {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.top {
+    width: 95%;
+    background: #131617;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.top .heading, .below .heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top .artists {
+    display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 15px;
-}
-.below .left .genre .card{
-       width: auto;
-       padding-right:9px;
-       padding-left: 5px;
-       height: 60px;
-       background: rgb(84, 129, 131);
-      font-size: 15px;
-      border-radius: 10px;
-}
-.below .left .genre .genre-name{
-    text-wrap: wrap;
+    gap: 20px;
 }
 
-.below .right{
-    width: 400px;
-    background:#131617;
-    border-radius: 10px;
-    padding:10px 30px 10px 30px;
-}
-.right .heading{
+.artists .card {
     display: flex;
-    justify-content: space-between;
-}
-.right .charts .chart{
-    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
-.right .charts .chart img{
-    width: 60px;
-    height: 60px;
+
+.artists .card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
 }
-.right .charts .chart .title{
+
+.artists .card .title {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.artists .card .plays {
+    color: #505152;
+    font-size: 13px;
+}
+
+.below {
+    width: 95%;
+    background: #131617;
+    border-radius: 10px;
+    padding: 15px;
+}
+.below .charts {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+}
+
+.below .charts .chart {
+    display: grid;
+    grid-template-columns: 1fr 3fr 2fr 2fr ;
+    align-items: center;
+}
+
+.below .charts .chart img {
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+}
+
+.below .charts .chart .title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.below .charts .chart .time {
+    font-size: 14px;
+    color: #bbb;
+}
+
+
+.heading .see {
+    color: #505152;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+
+.heading .see:hover {
+    color: rgb(228, 221, 221);
+}
+
+@media (max-width: 1030px) {
+    .top .artists {
+        gap: 15px;
+    }
+    
+    .below .charts .chart img {
+        width: 30px;
+        height: 30px;
+        border-radius: 2px;
+    }
+}
+
+@media (max-width: 700px) {
+    .top .artists {
+        gap: 10px;
+    }
+
+    .below .charts .chart {
+        display: grid;
+        grid-template-columns: 0.5fr 3r 2fr 1fr;
+    }
+
+}
+
+@media (max-width: 490px) {
+    .top {
+        width: 85%;
+    }
+
+    .top .artists {
+        justify-content: space-between;
+    }
+
+    .artists .card .title {
+        font-size: 12px;
+    }
+
+    .below {
+        width: 85%;
+    }
+    .below .charts .chart {
+        display: grid;
+        grid-template-columns: 0.5fr 3r 2fr 1fr;
+    }
+
+    .below .charts .chart img {
+        width: 20px;
+        height: 20px;
+        border-radius: 2px;
+    }
+
+    .below .charts .chart p {
+        font-size: 12px;
+    }
 }
