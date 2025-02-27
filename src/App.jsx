@@ -6,6 +6,7 @@ import Home from "./Pages/Home.jsx";
 import Artist from "./Pages/Artist.jsx";
 import { BrowserRouter as Router, Routes, Route } from "react-router";
 import Player from "./Components/Player/Player.jsx";
+import Category from "./Pages/Category.jsx";
 
 const App = () => {
   const [token, setToken] = useState("");
@@ -24,6 +25,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home token={token} />} />
           <Route path="/artist/:artistId" element={<Artist token={token} />} />
+          <Route path="/category" element={<Category token={token}/>}/>
         </Routes>
         <Player />
       </Router>

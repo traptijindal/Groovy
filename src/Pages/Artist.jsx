@@ -1,12 +1,13 @@
 import React from 'react'
 import ArtistDetail from '../Components/ArtistDetail/ArtistDetail'
 import Sidebar from '../Components/Sidebar/Sidebar'
+import "./Artist.css"
 
 const Artist = ({token}) => {
   return (
-    <div className="main-content">
-        <Sidebar/>
     <div>
+        <Sidebar/>
+    <div className="main-content">
        
       <ArtistDetail token={token}/>
     </div>

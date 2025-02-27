@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./ArtistDetail.css";
+import { FaPlay } from "react-icons/fa";
 
 export default function ArtistDetail({ token }) {
   const { artistId } = useParams();
@@ -48,10 +49,9 @@ export default function ArtistDetail({ token }) {
           <div className="track" key={track.id}>
             <p>{index + 1}.</p>
             <img src={track.album.images[0]?.url || "/songcard.jpeg"} alt={track.name} />
-            <div className="track-info">
-              <p>{track.name}</p>
-              <p>{Math.floor(track.duration_ms / 60000)}:{((track.duration_ms / 1000) % 60).toFixed(0).padStart(2, "0")}</p>
-            </div>
+           <p className="track-info">{track.name}</p>
+            <p className="track-info">{Math.floor(track.duration_ms / 60000)}:{((track.duration_ms / 1000) % 60).toFixed(0).padStart(2, "0")}</p>
+            <FaPlay/>
           </div>
         ))}
       </div>
