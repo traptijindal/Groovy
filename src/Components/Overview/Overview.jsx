@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { getSpotifyToken } from "../../spotifyService.js"; 
 import "./Overview.css";
 
 export default function Overview({ token }) {
@@ -12,7 +11,7 @@ export default function Overview({ token }) {
 
   const fetchTopArtists = async () => {
     const response = await fetch(
-      "https://api.spotify.com/v1/artists?ids=0TnOYISbd1XYRBk9myaseg,1uNFoZAHBGtllmzznpCI3s,1HY2Jd0NmPuamShAr6KMms,3TVXtAsR1Inumwj472S9r4,7dGJo4pcD2V6oG8kP0tJRR,66CXWjxzNUsdJxJ2JdwvnR,06HL4z0CvFAxyc27GXpf02,5K4W6rqBFWDnAN6FQUkS6x",
+      "https://api.spotify.com/v1/artists?ids=4YRxDV8wJFPHPTeXepOstw,0oOet2f43PA68X5RxKobEy,0y59o4v8uw5crbN9M3JiL1,72beYOeW2sb2yfcS4JsRvb,7uIbLdzzSEqnX0Pkrb56cR,2oSONSC9zQ4UonDKnLqksx,1tqysapcCh1lWEAc9dIFpa,2fMqTqiTxUDlmcOEPaQSsx,6kzZ5isGLwtXLjA2Ari9ob,1mYsTxnqsietFxj1OgoGbG,1YzCsTRb22dQkh9lghPIrp",
       {
         headers: { Authorization: `Bearer ${token}` },
       }
@@ -56,7 +55,7 @@ export default function Overview({ token }) {
       <div className="top">
         <div className="heading">
           <p>Top Artists</p>
-          {/* <p className="see">See all</p> */}
+          <Link to='/artist'><p className="see" >See all</p></Link>
         </div>
         <div className="artists">
           {artists.map((artist) => (
@@ -86,5 +85,4 @@ export default function Overview({ token }) {
     </div>
   );
 }
-
 

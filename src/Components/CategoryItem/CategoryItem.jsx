@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from "react-router-dom";
 import './Category.css';
 import { motion } from 'framer-motion';
 
 const CategoryItem = ({token}) => {
+    const navigate = useNavigate();
     const [categories,setCategories]=useState([]);
     const fetchData =async()=>{
         const response=await fetch("https://api.spotify.com/v1/browse/categories", {
@@ -22,7 +24,7 @@ const CategoryItem = ({token}) => {
     animate={{ opacity: 1 }}
     transition={{ duration: 0.8 }}
 >
-    <div className="heading">
+    <div className="cat-heading">
         <p>Categories</p>
     </div>
 
@@ -34,6 +36,7 @@ const CategoryItem = ({token}) => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }} 
+                onClick={() => navigate(`/category/${category.name}`)}
             >
                 <img src={category.icons[0]?.url || "/default-category.jpeg"} alt={category.name} />
                 <p className="title">{category.name}</p>

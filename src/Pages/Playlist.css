@@ -1,0 +1,11 @@
+.main-content-playlist {
+    padding-left: 19%;
+    padding-right: 2%;
+}
+@media (max-width:900px){
+   .main-content-playlist{
+    padding-left:0px;
+    padding-right: 0px;
+}
+
+}
