@@ -75,7 +75,7 @@ export default function Overview({ token }) {
         </div>
         <div className="categories">
           {categories.map((category) => (
-            <div className="category-card" key={category.id}>
+            <div className="category-card" key={category.id} onClick={() => navigate(`/category/${category.name}`)}>
               <img src={category.icons[0]?.url || "/default-category.jpeg"} alt={category.name} />
               <p className="title">{category.name}</p>
             </div>

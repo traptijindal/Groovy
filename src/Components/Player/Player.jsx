@@ -12,11 +12,11 @@ const Player = ({ song, isPlaying, togglePlay }) => {
            <img src={song.image} alt={song.title} className="player-image" />
           <div className="player-info">
             <h3>{song.title}</h3>
-            <p>{song.artist}</p>
+            {/* <p>{song.artist}</p> */}
           </div>
            </div>
-         <div>
-         <audio src={song.url} autoPlay controls />
+         <div >
+         <audio src={song.url} autoPlay controls className='audio'/>
          </div>
         </>
       ) : (

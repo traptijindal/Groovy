@@ -9,6 +9,7 @@
     padding: 10px;
     margin-top: 20px;
     gap: 40px;
+   
   }
   
   .player-image {
@@ -19,6 +20,8 @@
   }
   .player{
     display: flex;
+    justify-content: space-around;
+    justify-items: center;
   }
   
   .player-info h3 {
@@ -38,5 +41,16 @@
     font-size: 20px;
     cursor: pointer;
     margin-left: auto;
+  }
+  @media(max-width:500px){
+    .music-player{
+      gap: 2px;
+    }
+    .player-info h3 {
+      display: none;
+    }
+    .audio{
+      width: 230px;
+      }
   }
   

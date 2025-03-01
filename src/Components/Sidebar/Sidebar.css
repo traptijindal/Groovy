@@ -103,7 +103,7 @@
         position: relative;
         align-items: center;
         justify-content: center;
-        height: 60px;
+        /* height: 60px; */
         width: 95%;
         background: transparent;
         border-radius: 13px;
@@ -154,6 +154,7 @@
      .tab-box .dragging{
         scroll-behavior: auto;
         cursor: grab;
+        text-align: center;
      }
     .tab-box .tab {
         cursor: pointer;
@@ -161,7 +162,8 @@
         white-space: nowrap;
         background: #f5f4fd;
         border: 1px solid #d8d5f2;
-        padding: 1px 10px;
+        padding: 1px 5px;
+        width: 68px;
         border-radius: 10px;
     } 
     .tab-box .dragging .tab{

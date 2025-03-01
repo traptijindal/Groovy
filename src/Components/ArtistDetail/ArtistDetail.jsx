@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./ArtistDetail.css";
 import { FaPlay,FaPause } from "react-icons/fa";
-import Player from "../Player/Player";
 import { fetchJioSaavnSong } from "../../utils";
 
 export default function ArtistDetail({ token,song,setCurrentSong,isPlaying,setIsPlaying}) {
@@ -54,7 +53,11 @@ export default function ArtistDetail({ token,song,setCurrentSong,isPlaying,setIs
             <img src={track.album.images[0]?.url || "/songcard.jpeg"} alt={track.name} />
            <p className="track-info">{track.name}</p>
             <p className="track-info">{Math.floor(track.duration_ms / 60000)}:{((track.duration_ms / 1000) % 60).toFixed(0).padStart(2, "0")}</p>
-<FaPause onClick={() => fetchJioSaavnSong(track.name, track.id, setCurrentSong, playingTrackId, setPlayingTrackId, setIsPlaying)} />
+  {playingTrackId === track.id ? (
+      <FaPause onClick={() => fetchJioSaavnSong(track.name, track.id, setCurrentSong, playingTrackId, setPlayingTrackId, setIsPlaying)} />
+    ) : (
+      <FaPlay onClick={() => fetchJioSaavnSong(track.name, track.id, setCurrentSong, playingTrackId, setPlayingTrackId, setIsPlaying)} />
+    )}
           </div>
         ))}
       </div>

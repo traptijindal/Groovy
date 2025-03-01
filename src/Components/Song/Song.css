@@ -1,3 +1,10 @@
+.main-container {
+    padding-left: 19%;
+    padding-right: 2%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
 .songs-container {
     text-align: center;
     padding: 20px;
@@ -30,3 +37,23 @@ li img {
     border-radius: 5px;
 }
 
+@media (max-width:900px){
+    .main-container{
+     padding-left:0px;
+     padding-right: 0px;
+ }
+ 
+ }
+
+ @media (max-width:700px){
+    li{
+      grid-template-columns: 0.5fr 1r 3fr 1fr 0.5fr;
+      font-size: 0.8rem;
+    }
+  
+ }
+ @media(max-width:500px){
+    li{
+        font-size: 14px;
+    }
+ }
