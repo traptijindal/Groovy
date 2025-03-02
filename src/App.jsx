@@ -10,7 +10,7 @@ import Category from "./Pages/Category.jsx";
 import ArtistFull from "./Components/ArtistFull/ArtistFull.jsx";
 import Playlist from "./Pages/Playlist.jsx";
 import SongsPage from "./Components/Song/Song.jsx";
-
+import Podcast from "./Pages/Podcast/Podcast.jsx";
 const App = () => {
   const [token, setToken] = useState("");
   const [currentSong, setCurrentSong] = useState(null);
@@ -36,6 +36,7 @@ const App = () => {
             <Route path="/playlist/:id" element={<SongsPage currentSong={currentSong}setCurrentSong={setCurrentSong} 
                 isPlaying={isPlaying} 
                 setIsPlaying={setIsPlaying} />}/>
+            <Route path="/podcast" element={<Podcast token={token}/>}/>
         </Routes>
         {currentSong && <Player song={currentSong} setCurrentSong={setCurrentSong}isPlaying={isPlaying} setIsPlaying={setIsPlaying} />}
       </Router>

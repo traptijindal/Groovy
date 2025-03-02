@@ -7,9 +7,10 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import wave from "/Wave.svg";
 import { FaXmark } from "react-icons/fa6";
 import "./Navbar.css";
+import { Link ,useLocation} from "react-router";
 
 const Navbar = () => {
-    
+  const location = useLocation(); 
   const [isOpen, setIsOpen] = useState(false);
 
   const handleOpen = () => {
@@ -23,9 +24,19 @@ const Navbar = () => {
               <p>Groovy</p>
         </div>
       <div className="links">
-        <p>MUSIC</p>
-        <p>PODCAST</p>
-        <p>LIVE</p>
+      <Link to="/" className={location.pathname === "/" ? "active" : ""}><p>MUSIC</p></Link>
+        <Link
+          to="/podcast"
+          className={location.pathname === "/podcast" ? "active" : ""}
+        >
+          <p>Podcast</p>
+        </Link>
+        {/* <Link
+          to="/live"
+          className={location.pathname === "/live" ? "active" : ""}
+        >
+          <p>LIVE</p>
+        </Link> */}
       </div>
 
       <div className="search-bar">
@@ -47,9 +58,19 @@ const Navbar = () => {
       {isOpen ? <FaXmark /> : <GiHamburgerMenu />}
        </div>
       <div className={`dropdown-menu ${isOpen ? "open" : ""}`}>
-        <li>MUSIC</li>
-        <li>PODCAST</li>
-        <li>LIVE</li>
+      <Link to="/" className={location.pathname === "/" ? "active" : ""}><li>MUSIC</li></Link>
+      <Link
+          to="/podcast"
+          className={location.pathname === "/podcast" ? "active" : ""}
+        >
+          <li>Podcast</li>
+        </Link>
+        {/* <Link
+          to="/live"
+          className={location.pathname === "/live" ? "active" : ""}
+        >
+          <li>LIVE</li>
+        </Link> */}
         <li>SETTING</li>
         <div className="profile">
           <img src={tom} alt="" />
