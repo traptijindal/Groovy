@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './Podcast.css'
 import Sidebar from '../../Components/Sidebar/Sidebar'
+import { ImCross } from "react-icons/im";
 import { API_KEY } from '../../data'
 
 const Podcast = ({token}) => {
@@ -27,7 +28,8 @@ const Podcast = ({token}) => {
         <div className="video-overlay">
           <div className="video-wrapper">
           <button className="close-btn" onClick={() => setSelectedVideo(null)}>
-            <p>X   <span className='line-through'>Close</span></p>
+            <ImCross className='cross'/>
+           <span className='line-through'>Close</span>
           </button>
             <iframe
               width="560"
