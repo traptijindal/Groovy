@@ -90,7 +90,14 @@
 .wrapper{
     display: none;
 }
-
+ .shortcut-links a{
+    text-decoration: none;
+    color: inherit;
+}
+.tab-box a {
+    text-decoration: none;
+    color: inherit;
+ }
 
 @media(max-width:900px){
     .main{
@@ -163,7 +170,7 @@
         background: #f5f4fd;
         border: 1px solid #d8d5f2;
         padding: 1px 5px;
-        width: 68px;
+        width: 90px;
         border-radius: 10px;
     } 
     .tab-box .dragging .tab{

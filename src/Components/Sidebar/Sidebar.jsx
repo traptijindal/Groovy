@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import { Link } from "react-router";
 import wave from "/Wave.svg";
 import { MdOutlineExplore } from "react-icons/md";
 import { AiFillSound } from "react-icons/ai";
@@ -56,7 +57,7 @@ const Sidebar = () => {
           </div>
           <div className="shortcut-links">
             <AiFillSound className="icon" />
-            <p>Genre</p>
+            <Link to="/category"><p>Category</p></Link>
           </div>
           <div className="shortcut-links">
             <FaCompactDisc className="icon" />
@@ -64,31 +65,31 @@ const Sidebar = () => {
           </div>
           <div className="shortcut-links">
             <FaMicrophone className="icon" />
-            <p>Artists</p>
+           <Link to="/artist"> <p>Artists</p></Link>
           </div>
-          {/* <div className="shortcut-links">
-            <FaRadio className="icon" />
-            <p>Radio</p>
-          </div> */}
         </div>
 
         <div className="shortcut">
           <p>PLAYLIST</p>
-          <div className="shortcut-links">
+          {/* <div className="shortcut-links">
             <FaPlusCircle className="icon" />
-            <p>Create New</p>
+            <p>\Create New</p>
+          </div> */}
+          <div className="shortcut-links">
+          <FaPlayCircle className="icon" />
+            <Link to="/playlist/1167751266"><p>1990s Hindi</p></Link>
           </div>
           <div className="shortcut-links">
             <FaPlayCircle className="icon" />
-            <p>Best of 2021</p>
+           <Link to="/playlist/940775963"> <p>Best of IndiPop</p></Link>
           </div>
           <div className="shortcut-links">
             <FaPlayCircle className="icon" />
-            <p>New Jams</p>
+            <Link to="/playlist/1170578842"><p>2000s Punjabi </p></Link>
           </div>
           <div className="shortcut-links">
             <FaPlayCircle className="icon" />
-            <p>Design flow</p>
+            <Link to="/playlist/3379491"><p>Best Of 90s</p></Link>
           </div>
         </div>
       </div>
@@ -102,14 +103,14 @@ const Sidebar = () => {
        onMouseMove={handleMouseMove}
        onMouseUp={handleMouseUp}>
         <li class="tab">Explore</li>
-        <li class="tab active">Genre</li>
+        <li class="tab active">Category</li>
         <li class="tab">Albums</li>
         <li class="tab">Artists</li>
         <li class="tab">Radio</li>
-        <li class="tab">Best of 2021</li>
-        <li class="tab">New Jams</li>
-        <li class="tab">Design flow</li>
-        <li class="tab">Create New</li>
+        <Link to="/playlist/940775963"><li class="tab">Best of IndiPop</li></Link>
+        <Link to="/playlist/1170578842"><li class="tab">2000s Punjabi</li></Link>
+        <Link to="/playlist/1167751266"><li class="tab">1990s Hindi</li></Link>
+        <Link to="/playlist/3379491"><li class="tab">Best Of 90s</li></Link>
       </ul>
       <div className="icon" id='right' onClick={() => handleArrowClick("right")}><MdOutlineArrowForwardIos /></div>
     </div>

@@ -2,6 +2,7 @@ import React,{useState,useEffect} from 'react'
 import { motion } from 'framer-motion';
 import { useNavigate } from "react-router-dom";
 import "./ArtistFull.css"
+import Sidebar from '../Sidebar/Sidebar';
 
 const ArtistFull = ({token}) => {
     const navigate = useNavigate();
@@ -24,6 +25,8 @@ const ArtistFull = ({token}) => {
      }, [token]);
   return (
     <div>
+      <Sidebar/>
+      <div className='main-container'>
        <motion.div
     className="container"
     initial={{ opacity: 0 }}
@@ -49,6 +52,7 @@ const ArtistFull = ({token}) => {
     </div>
 </motion.div>
 
+    </div>
     </div>
   )
 }
