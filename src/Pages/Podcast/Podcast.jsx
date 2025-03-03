@@ -26,7 +26,9 @@ const Podcast = ({token}) => {
       {selectedVideo && (
         <div className="video-overlay">
           <div className="video-wrapper">
-            <button className="close-btn" onClick={() => setSelectedVideo(null)}>✖</button>
+          <button className="close-btn" onClick={() => setSelectedVideo(null)}>
+            <p>X   <span className='line-through'>Close</span></p>
+          </button>
             <iframe
               width="560"
               height="315"

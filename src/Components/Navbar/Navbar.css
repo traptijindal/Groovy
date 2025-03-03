@@ -128,7 +128,7 @@
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
-    height: 255px;
+    height: 200px;
 }
 
 .dropdown-menu li{
