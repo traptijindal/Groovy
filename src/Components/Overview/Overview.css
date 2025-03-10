@@ -19,9 +19,11 @@
   color: inherit;
 }
 .see {
-  color: #1db954;
+  color: hsl(39, 88%, 50%);
+  font-weight: 500;
   cursor: pointer;
   font-size: 14px;
+
 }
 
 .artists,

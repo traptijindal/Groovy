@@ -58,6 +58,9 @@ const handlePlayPause = () => {
               max="100"
               value={progress}
               onChange={handleSeek}
+              style={{
+                background: `linear-gradient(to right, hsl(39, 88%, 50%) ${progress}%, #444 ${progress}%)`,
+              }}
             />
           </div>
 

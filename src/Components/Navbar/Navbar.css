@@ -45,9 +45,9 @@
 .search-bar {
   display: flex;
   align-items: center;
-  gap: 2px;
-  background: #f5f4fd;
-  border: 1px solid #d8d5f2;
+  gap: 8px;
+  background-color: #202020;
+  border: 1px solid #2c2c2c;
   border-radius: 5px;
   padding: 8px 12px;
   cursor: pointer;
@@ -60,10 +60,11 @@
 
 .search-bar input {
   border: none;
-  background: transparent;
+  background-color: transparent;
   font-size: 14px;
   flex-grow: 1;
   outline: none;
+  color: white;
 }
 
 .search-dropdown {
@@ -152,14 +153,6 @@
   display: flex;
   align-items: center;
   gap: 10px;
-}
-.notification {
-  width: 25px;
-  height: 25px;
-}
-.setting {
-  width: 20px;
-  height: 20px;
 }
 .profile {
   display: flex;

@@ -103,7 +103,7 @@
   -webkit-appearance: none;
   width: 12px;
   height: 12px;
-  background: #1db954;
+  background: hsl(39, 88%, 50%);
   border-radius: 50%;
   cursor: pointer;
 }

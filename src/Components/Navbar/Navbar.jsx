@@ -88,7 +88,7 @@ const Navbar = ({ setCurrentSong,audioRef,setIsPlaying }) => {
       </div>
       <div className="links">
         <Link to="/" className={location.pathname === "/" ? "active" : ""}>
-          <p>MUSIC</p>
+          <p>Music</p>
         </Link>
         <Link
           to="/podcast"
@@ -125,8 +125,6 @@ const Navbar = ({ setCurrentSong,audioRef,setIsPlaying }) => {
         )}
       </div>
       <div className="icons">
-        <IoMdNotificationsOutline className="notification" />
-        <IoSettings className="setting" />
         <div className="profile">
           <img src={tom} alt="" />
           <p>Tashu Jindal </p>

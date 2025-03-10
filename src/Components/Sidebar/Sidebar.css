@@ -103,7 +103,11 @@
 
 .shortcut a.active .shortcut-links {
   background: #3b3e3f;
+  padding:5px;
   border-radius: 5px;
+}
+.shortcut a.active .shortcut-links .icon{
+  color:hsl(39, 88%, 50%) ;
 }
 .tab-box a.active .tab {
   background: #181818;
