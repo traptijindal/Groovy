@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useRef } from "react";
 import Navbar from "./Components/Navbar/Navbar.jsx";
 import { getSpotifyToken } from "./spotifyService.js";
 import "./App.css";
@@ -15,6 +15,15 @@ const App = () => {
   const [token, setToken] = useState("");
   const [currentSong, setCurrentSong] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const audioRef = useRef(null);
+  const updateProgress = () => {
+    if (audioRef.current && audioRef.current.duration) {
+      const currentProgress =
+        (audioRef.current.currentTime / audioRef.current.duration) * 100;
+      setProgress(currentProgress);
+    }
+  };
   useEffect(() => {
     const fetchToken = async () => {
       const accessToken = await getSpotifyToken();
@@ -26,19 +35,21 @@ const App = () => {
   return (
     <div>
       <Router>
-        <Navbar />
+        <Navbar setCurrentSong={setCurrentSong} audioRef={audioRef} setIsPlaying={setIsPlaying}/>
         <Routes>
           <Route path="/" element={<Home token={token} />} />
-          <Route path="/artist/:artistId" element={<Artist token={token} song={currentSong} setCurrentSong={setCurrentSong}isPlaying={isPlaying} setIsPlaying={setIsPlaying}/>} />
+          <Route path="/artist/:artistId" element={<Artist token={token} song={currentSong} setCurrentSong={setCurrentSong}isPlaying={isPlaying} setIsPlaying={setIsPlaying} audioRef={audioRef} />} />
           <Route path="/category" element={<Category token={token}/>}/>
-          <Route path="/category/:name" element={<Playlist token={token} />} />
+          <Route path="/category/:name" element={<Playlist token={token} audioRef={audioRef}/>} />
           <Route path="/artist" element={<ArtistFull token={token} song={currentSong} setCurrentSong={setCurrentSong}isPlaying={isPlaying} setIsPlaying={setIsPlaying}/>}/>
             <Route path="/playlist/:id" element={<SongsPage currentSong={currentSong}setCurrentSong={setCurrentSong} 
                 isPlaying={isPlaying} 
-                setIsPlaying={setIsPlaying} />}/>
+                setIsPlaying={setIsPlaying} 
+                audioRef={audioRef}/>}/>
             <Route path="/podcast" element={<Podcast token={token}/>}/>
         </Routes>
-        {currentSong && <Player song={currentSong} setCurrentSong={setCurrentSong}isPlaying={isPlaying} setIsPlaying={setIsPlaying} />}
+        {currentSong && <Player song={currentSong} setCurrentSong={setCurrentSong}isPlaying={isPlaying} setIsPlaying={setIsPlaying} audioRef={audioRef} progress={progress} setProgress={setProgress}/>}
+        <audio ref={audioRef}  onTimeUpdate={updateProgress} />
       </Router>
     </div>
   );

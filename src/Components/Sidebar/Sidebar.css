@@ -1,179 +1,201 @@
 .main {
-    width: 14%;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    padding-left: 2%;
-    background: #131617;
-    overflow-y: auto; 
-    position: fixed;
-    padding-top: 10px;
+  width: 14%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  padding-left: 2%;
+  background: #131617;
+  overflow-y: auto;
+  position: fixed;
+  padding-top: 10px;
 }
 
 .main .logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    position: fixed; 
-    top: 0;
-    left: 0;
-    background: #131617;
-    padding: 10px 2%;
-    z-index: 1000;
-   }
-
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #131617;
+  padding: 10px 2%;
+  z-index: 1000;
+}
 
 .main .logo img {
-    width: 35px;
-    height: 35px;
+  width: 35px;
+  height: 35px;
 }
 
 .main .logo p {
-    font-size: 18px;
-    color: white;
+  font-size: 18px;
+  color: white;
 }
 
 .sidebar {
-    top: 55px;
-    position: fixed;
-    left: 2%;
-    width: calc(16% - 2%);
-    height: calc(100vh - 60px);
-    overflow-y: auto;
-    padding-top: 20px;
+  top: 55px;
+  position: fixed;
+  left: 2%;
+  width: calc(16% - 2%);
+  height: calc(100vh - 60px);
+  overflow-y: auto;
+  padding-top: 20px;
 }
 
 .sidebar::-webkit-scrollbar {
-    width: 3px;
+  width: 3px;
 }
 
 .sidebar::-webkit-scrollbar-thumb {
-    background: #cb9124;
-    border-radius: 5px;
+  background: #cb9124;
+  border-radius: 5px;
 }
 
 .shortcut {
-    height: auto;
-    padding-bottom: 10px;
+  height: auto;
+  padding-bottom: 10px;
 }
 
 .shortcut p {
-    color: #8f9494;
-    margin-bottom: 10px;
-    font-size: 14px;
+  color: #8f9494;
+  margin-bottom: 10px;
+  font-size: 14px;
 }
 
 .shortcut-links {
-    display: flex;
-    align-items: center;
-    margin-bottom: 8px;
-    cursor: pointer;
-    padding: 2px 2px;
-    transition: background 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  cursor: pointer;
+  padding: 2px 2px;
+  transition: background 0.2s ease-in-out;
 }
 
 .shortcut-links:hover {
-    background: #1a1d1e;
-    border-radius: 5px;
+  background: #3b3e3f;
+  border-radius: 5px;
 }
 
 .shortcut-links .icon {
-    width: 20px;
-    margin-right: 10px;
-    color: white;
+  width: 20px;
+  margin-right: 10px;
+  color: white;
 }
 
 .shortcut-links p {
-    color: white;
-    font-size: 15px;
+  color: white;
+  font-size: 15px;
 }
-.wrapper{
-    display: none;
+.wrapper {
+  display: none;
 }
- .shortcut-links a{
-    text-decoration: none;
+.shortcut a {
+  text-decoration: none;
+  color: inherit;
+}
+.tab a {
+  text-decoration: none;
+  color: inherit;
+}
+.shortcut a.active p {
+  color: hsl(39, 88%, 50%);
+}
+
+.shortcut a.active .shortcut-links {
+  background: #3b3e3f;
+  border-radius: 5px;
+}
+.tab-box a.active .tab {
+  background: #181818;
+  color: white;
+  border: 2px solid hsl(39, 88%, 50%);
+}
+
+@media (max-width: 900px) {
+  .main {
+    display: none !important;
+  }
+
+  .wrapper {
+    overflow-x: hidden;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    /* height: 60px; */
+    width: 95%;
+    background: transparent;
+    border-radius: 13px;
+  }
+
+  .wrapper .icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.2rem;
+    border-radius: 50%;
+    background: #3a3a3a;
+    transition: background 0.3s ease;
+  }
+
+  .icon:hover {
+    background: #efedfb;
+  }
+  .icon:first-child {
+    left: 0;
+    background: linear-gradient(90deg, #fff 70%, transparent);
+  }
+
+  .icon:last-child {
+    right: 0;
+    justify-content: flex-end;
+    background: linear-gradient(90deg, #fff 70%, transparent);
+  }
+  .icon:first-child,
+  .icon:last-child {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+
+  .wrapper .tab-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    list-style: none;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+  .tab-box .dragging {
+    scroll-behavior: auto;
+    cursor: grab;
+  }
+  .tab-box .tab {
+    text-align: center;
+    cursor: pointer;
+    font-size: 12px;
+    white-space: nowrap;
+    background: #f5f4fd;
+    border: 1px solid #d8d5f2;
+    padding: 5px 10px;
+    height: 15px;
+    line-height: 25px;
+    letter-spacing: 0.4px;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .tab-box .dragging .tab {
+    user-select: none;
+  }
+  .tab-box a {
     color: inherit;
-}
-.tab-box a {
     text-decoration: none;
-    color: inherit;
- }
-
-@media(max-width:900px){
-    .main{
-        display: none !important;
-    } 
-
-    .wrapper {
-        overflow-x: hidden;
-        display: flex;
-        position: relative;
-        align-items: center;
-        justify-content: center;
-        /* height: 60px; */
-        width: 95%;
-        background: transparent;
-        border-radius: 13px;
-    }
-
-    .wrapper .icon {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        height: 30px;
-        width: 30px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        font-size: 1.2rem;
-        border-radius: 50%;
-        background: #3a3a3a;
-        transition: background 0.3s ease;
-    }
-
-    .icon:hover {
-        background: #efedfb;
-    }
-    .icon:first-child {
-        left: 0; 
-        background: linear-gradient(90deg, #fff 70%, transparent);
-    }
-
-    .icon:last-child {
-        right: 0; 
-        justify-content: flex-end;
-        background: linear-gradient(90deg, #fff 70%, transparent);
-    }
-    .icon:first-child,
-    .icon:last-child {
-        font-size: 1.5rem; 
-        margin: 0;
-    }
-
-    .wrapper .tab-box {
-        display: flex;
-        gap: 12px;
-        list-style: none;
-        overflow-x: hidden;
-        scroll-behavior: smooth;
-    }
-     .tab-box .dragging{
-        scroll-behavior: auto;
-        cursor: grab;
-        text-align: center;
-     }
-    .tab-box .tab {
-        cursor: pointer;
-        font-size: 12px;
-        white-space: nowrap;
-        background: #f5f4fd;
-        border: 1px solid #d8d5f2;
-        padding: 1px 5px;
-        width: 90px;
-        border-radius: 10px;
-    } 
-    .tab-box .dragging .tab{
-        user-select: none;
-    }
+  }
 }
