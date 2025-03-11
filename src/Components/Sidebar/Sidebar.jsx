@@ -174,7 +174,7 @@ const Sidebar = () => {
           >
             <li className="tab">Artists</li>
           </Link>
-          <li className="tab">Radio</li>
+          {/* <li className="tab">Radio</li> */}
           <Link
             to="/playlist/940775963"
             className={
