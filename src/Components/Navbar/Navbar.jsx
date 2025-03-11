@@ -127,7 +127,7 @@ const Navbar = ({ setCurrentSong,audioRef,setIsPlaying }) => {
       <div className="icons">
         <div className="profile">
           <img src={tom} alt="" />
-          <p>Tashu Jindal </p>
+          <p>Tom Kundra </p>
         </div>
       </div>
 
@@ -136,7 +136,7 @@ const Navbar = ({ setCurrentSong,audioRef,setIsPlaying }) => {
       </div>
       <div className={`dropdown-menu ${isOpen ? "open" : ""}`}>
         <Link to="/" className={location.pathname === "/" ? "active" : ""}>
-          <li>MUSIC</li>
+          <li>Music</li>
         </Link>
         <Link
           to="/podcast"
@@ -150,10 +150,10 @@ const Navbar = ({ setCurrentSong,audioRef,setIsPlaying }) => {
         >
           <li>LIVE</li>
         </Link> */}
-        <li>SETTING</li>
+      
         <div className="profile">
           <img src={tom} alt="" />
-          <p>Tashu Jindal </p>
+          <p>Tom Kundra </p>
         </div>
       </div>
     </div>

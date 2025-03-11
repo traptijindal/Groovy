@@ -83,7 +83,6 @@
   transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
 }
 
-/* Show dropdown on hover/focus */
 .search-container:hover .search-dropdown,
 .search-container:focus-within .search-dropdown {
   display: block;
@@ -91,7 +90,7 @@
   transform: translateY(0);
 }
 
-/* Dropdown list items */
+
 .search-dropdown li {
   list-style: none;
 }
@@ -111,12 +110,12 @@
   border-radius: 4px;
 }
 
-/* Hover effect for better visibility */
+
 .search-dropdown li button:hover {
   background: #efedfb;
 }
 
-/* Links inside the dropdown */
+
 .search-dropdown a {
   text-decoration: none;
   color: inherit;
@@ -130,7 +129,6 @@
   background: #efedfb;
 }
 
-/* Custom scrollbar for dropdown */
 .search-dropdown::-webkit-scrollbar {
   width: 6px;
 }
@@ -209,7 +207,7 @@
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
-  height: 160px;
+  height: 140px;
 }
 
 .dropdown-menu li {
